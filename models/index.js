@@ -11,8 +11,10 @@ Blog.belongsTo(User, { foreignKey: 'user_id', onDelete: 'CASCADE' });
 User.hasMany(Blog, { foreignKey: 'user_id', onDelete: 'CASCADE' });
 
 // Blog has many comments
-// do I need to add onDelete cascade here?
 Blog.hasMany(Comments, { foreignKey: 'blog_id', onDelete: 'CASCADE' });
 
 // comments belong to user
 Comments.belongsTo(User, { foreignKey: 'user_id', onDelete: 'CASCADE' });
+
+
+module.exports = {User, Blog, Comments}

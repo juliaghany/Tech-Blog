@@ -5,6 +5,7 @@ const Blog = require('./Blog');
 
 class Comments extends Model { }
 
+// initialize Comments model 
 Comments.init(
     {
         id: {
@@ -43,4 +44,6 @@ Comments.init(
         underscored: true,
         modelName: 'comments',
     }
-)
+);
+
+module.exports = Comments;

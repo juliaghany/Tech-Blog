@@ -1,0 +1,33 @@
+<h1>Dashboard page</h1>
+
+<div>
+    {{#if blogs.length}}
+    <h1>My Blogs:</h1>
+    {{#each blogs as |blog|}}
+    <a href="blog/edit/{{blog.id}}">
+        <h1>{{blog.blog_title}}</h1>
+    </a>
+    <p>{{blog.blog_description}}</p>
+
+    {{/each}}
+    {{else}}
+    <h1>No blogs to show</h1>
+
+    {{/if}}
+</div>
+
+<button id="create-btn">Create New Post</button>
+<form class="blog-form" style="display: none">
+    <label>Title:
+
+        <input type="text" id="blog-title">
+    </label>
+    <label>
+        Content:
+        <textarea type="text" id="blog-description"></textarea>
+    </label>
+
+    <input type="submit">
+</form>
+
+<script src="./js/create-blog.js"></script>

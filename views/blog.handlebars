@@ -4,20 +4,38 @@
     <h2>{{blog.blog_title}}</h2>
     <h3>Posted by {{blog.user.username}} on {{format_date blog.date_created}}</h3>
     <p>{{blog.blog_description}}</p>
+    <div class="comments-section">
+        <h3>Comments:</h3>
+        {{#each blog.comments as |comment|}}
+        <div class="comment">
+            <p>{{ comment.comment_description }}</p>
+            <p>By {{comment.user.username }} on {{ format_date comment.date_created }}</p>
+        </div>
+        {{/each}}
+        {{#if logged_in}}
+        <form class="comment-form">
+            <label>Leave Comment Here:</label>
+            <textarea type="text" id="comment-description"></textarea>
+                    <button type="submit" class="submit-comment">Submit</button>
+        </form>
+        <script src="/js/create-comment.js"></script>
+        {{/if}}
+    </div>
     {{#if can_edit}}
     <form class="blog-form" style="display: none">
         <label>Title:
-    
+
             <input type="text" id="blog-title" value="{{blog.blog_title}}">
         </label>
         <label>
             Content:
-            <textarea type="text" id="blog-description" defaultValue="{{blog.blog_description}}">{{blog.blog_description}}</textarea>
-        </label>
+            <textarea type="text" id="blog-description"
+                defaultValue="{{blog.blog_description}}">{{blog.blog_description}}</textarea>
+            </label>
             <input type="submit">
-    </form>
-    <button id="edit-btn">Edit</button>
-    <button id="delete-btn">Delete</button>
-    <script src="/js/edit-blog.js"></script>
-    {{/if}}
-</div>
+        </form>
+        <button id="edit-btn">Edit</button>
+        <button id="delete-btn">Delete</button>
+        <script src="/js/edit-blog.js"></script>
+        {{/if}}
+    </div>

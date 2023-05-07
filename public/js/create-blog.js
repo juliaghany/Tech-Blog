@@ -27,7 +27,7 @@ const blogFormHandler = async (event) => {
         if (response.ok) {
             document.location.reload()
         } else {
-            alert('Failed to sign up.');
+            alert('Failed to create blog.');
         }
     }
 };

@@ -2,21 +2,6 @@ const router = require('express').Router();
 const { Comments, BLog, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// GET comments
-router.get('/', async (req, res) => {
-    try {
-        const commentData = await Comments.findAll({});
-
-        if (!updatedComment) {
-            res.status(404).json({ message: 'Comment not found' });
-            return;
-        }
-        res.json(200).json(commentData);
-    } catch (err) {
-        res.status(500).json(err)
-    }
-});
-
 
 // CREATE new comment
 router.post('/blog/:id/comments', withAuth, async (req, res) => {

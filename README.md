@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-URL to functional, deployed action: 
+URL to functional, deployed action: https://julia-hany-tech-blog.herokuapp.com/
 
 ![Alt text]()
 ![Alt text]()

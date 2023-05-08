@@ -3,18 +3,24 @@
 // set up connection to MySQL database using sequelize
 // import dotenv library to load environment variables from .env file 
 
-const Sequelize = require('sequelize');
+const sequelize = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
-    {
-        host: 'localhost',
-        dialect: 'mysql',
-        port: 3306,
-    }
-);
+if (process.env.JAWSDB_URL) {
+    sequelize = new sequelize(process.env.JAWSDB_URL);
+} else {
+    sequelize = new sequelize(
+        process.env.DB_NAME,
+        process.env.DB_USER,
+        process.env.DB_PW,
+        {
+            host: 'localhost',
+            dialect: 'mysql',
+            port: 3306,
+        },
+    );
+}
+
+
 
 module.exports = sequelize;

@@ -1,28 +1,33 @@
-<h1>Signup</h1>
-<form class="signup-form">
-<label>Username:
+{{!-- login/signup view --}}
+<div class="login-card">
+    <h1>Sign Up</h1>
+    <form class="signup-form">
+        <label class="login-label">Username:
 
-<input type="text"  id="username-signup">
-</label>
-<label>
-Password:
-<input type="password" id="password-signup">
-</label>
+            <input class="login-input" type="text" id="username-signup">
+        </label>
+        <label class="login-label">
+            Password:
+            <input class="login-input" type="password" id="password-signup">
+        </label>
+        <button class="btn submit-btn" type="submit">Sign Up</button>
+    </form>
+</div>
 
-<input type="submit">
-</form>
+<div class="login-card">
+    <h1>Login</h1>
+    <form class="login-form">
+        <label class="login-label">Username:
 
-<h1>Login</h1>
-<form class="login-form">
-    <label>Username:
+            <input class="login-input" type="text" id="username-login">
+        </label>
+        <label class="login-label">
+            Password:
+            <input class="login-input" type="password" id="password-login">
+        </label>
 
-        <input type="text" id="username-login">
-    </label>
-    <label>
-        Password:
-        <input type="password" id="password-login">
-    </label>
+        <button class="btn submit-btn" type="submit">Login</button>
+    </form>
+</div>
 
-    <input type="submit">
-</form>
 <script src="./js/login.js"></script>

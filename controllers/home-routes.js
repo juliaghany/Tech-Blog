@@ -80,6 +80,7 @@ router.get('/blog/:id', async (req, res) => {
     }
 });
 
+// GET one blog post, if user can edit will allow editing and deleting of the post
 router.get('/blog/edit/:id', async (req, res) => {
     try {
         const blogData = await Blog.findByPk(req.params.id, {

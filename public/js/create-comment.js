@@ -1,6 +1,8 @@
+// referenced Module 14 Activity 9 public -> js -> add-dish.js
 const commentForm = document.querySelector(".comment-form");
 const commentBtn = document.querySelector('.submit-comment');
 
+// logic for posting a comment
 const commentFormHandler = async (event) => {
     event.preventDefault();
     document.querySelector
@@ -9,7 +11,7 @@ const commentFormHandler = async (event) => {
 
     if (comment_description) {
         var id = window.location.pathname.split("/")[window.location.pathname.split("/").length - 1]
-        const response = await fetch(`/blog/${id}/comments`, {
+        const response = await fetch(`/api/comments/blog/${id}/comments`, {
             method: 'POST',
             body: JSON.stringify({ comment_description }),
             headers: { 'Content-Type': 'application/json' },

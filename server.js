@@ -1,4 +1,5 @@
 // referenced Module 14 Activity 17 server.js file
+// set up sessions, handlebars.js view engine, static file serving, and routing
 
 const path = require('path');
 const express = require('express');
@@ -42,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+// sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () =>
         console.log(`Server running on port ${PORT}`))

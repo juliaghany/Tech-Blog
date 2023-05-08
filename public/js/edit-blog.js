@@ -1,7 +1,7 @@
 const editBtn = document.querySelector('#edit-btn');
 const deleteBtn = document.querySelector('#delete-btn');
 
-console.log("edit blog")
+// handles logic for editing blog post 
 const handleEditBlog = async (event) => {
     event.preventDefault()
     const blog_title = document.querySelector('#blog-title').value.trim();
@@ -22,6 +22,7 @@ const handleEditBlog = async (event) => {
     }
 }
 
+// event listener for editing blog post, shows edit form for blog post once edit button is clicked
 editBtn.addEventListener("click", function (event) {
     var form = document.querySelector(".blog-form")
     form.style.display = "block"
@@ -30,7 +31,7 @@ editBtn.addEventListener("click", function (event) {
 
 
 
-
+// event listener and logic for deleting blog post 
 deleteBtn.addEventListener("click", async function (event) {
     var id = window.location.pathname.split("/")[window.location.pathname.split("/").length - 1]
     const response = await fetch(`/api/blogs/${id}`, {

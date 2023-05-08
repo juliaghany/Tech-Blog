@@ -1,4 +1,5 @@
 // reference Module 14 Activity 18
+
 const router = require('express').Router();
 const { User } = require('../../models');
 

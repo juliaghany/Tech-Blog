@@ -1,4 +1,5 @@
-// borrowed from Module 14 Activity 15 
+// referenced Module 14 Activity 15 
+// formats date to MM/DD/YYYY
 
 module.exports = {
     format_date: (date) => {

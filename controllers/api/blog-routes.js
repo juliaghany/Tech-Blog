@@ -1,7 +1,7 @@
 // reference Activity 09 -> controllers -> api -> dish-routes.js
 // reference challenge-13 routes -> api -> category-routes.js for Update
 const router = require('express').Router();
-const { Blog, User } = require('../../models');
+const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // CREATE new blog post

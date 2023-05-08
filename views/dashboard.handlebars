@@ -1,30 +1,31 @@
-<h1>Dashboard page</h1>
-
-<div>
+{{!-- dashboard view --}}
+<div class="card">
     {{#if blogs.length}}
     <h1>My Blogs:</h1>
+    <hr></hr>
+    <button id="create-btn">Create New Post</button>
     {{#each blogs as |blog|}}
     <a href="blog/edit/{{blog.id}}">
-        <h1>{{blog.blog_title}}</h1>
+        <h1 class="blog-title">{{blog.blog_title}}</h1>
     </a>
     <p>{{blog.blog_description}}</p>
 
     {{/each}}
     {{else}}
     <h1>No blogs to show</h1>
-
+    <button id="create-btn">Create New Post</button>
     {{/if}}
 </div>
 
-<button id="create-btn">Create New Post</button>
-<form class="blog-form" style="display: none">
+
+<form class="blog-form card" style="display: none">
     <label>Title:
 
-        <input type="text" id="blog-title">
+        <input class="input" type="text" id="blog-title" class="input new-blog">
     </label>
     <label>
         Content:
-        <textarea type="text" id="blog-description"></textarea>
+        <textarea class="input" type="text" id="blog-description" class="input"></textarea>
     </label>
 
     <input type="submit">

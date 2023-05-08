@@ -1,5 +1,5 @@
-// refer to Module 14 Activity 17 public -> js -> login.js
-console.log("file linked")
+// referenced Module 14 Activity 17 public -> js -> login.js
+// login logic
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -21,6 +21,7 @@ const loginFormHandler = async (event) => {
     }
 };
 
+// signup logic 
 const signupFormHandler = async (event) => {
     event.preventDefault();
     console.log("signing up")
@@ -38,7 +39,7 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            alert('Failed to sign up.');
+            alert('Failed to sign up. Please make sure your password has at least 8 characters.');
         }
     }
 };

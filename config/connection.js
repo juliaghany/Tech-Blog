@@ -1,4 +1,7 @@
-// borrowed code from Module 14 Activity 15
+// referenced Module 14 Activity 15 config -> connection.js
+
+// set up connection to MySQL database using sequelize
+// import dotenv library to load environment variables from .env file 
 
 const Sequelize = require('sequelize');
 require('dotenv').config();

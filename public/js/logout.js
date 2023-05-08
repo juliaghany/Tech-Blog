@@ -1,4 +1,6 @@
-// refer to Module 14 Activity 17
+// referenced Module 14 Activity 17
+// logout logic 
+
 const logout = async () => {
     const response = await fetch('/api/users/logout', {
         method: 'POST',
